@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class hanoi_tower_run extends JPanel
@@ -14,12 +15,11 @@ public class hanoi_tower_run extends JPanel
 	ArrayList<StepMove> StepMoveLog;
 
 	int Step = 0;
-
-	public hanoi_tower_run()
+	public hanoi_tower_run(int x)
 	{
 		StepMoveLog = new ArrayList<StepMove>();
 		// starting q'ty of discs
-		int n = 4;
+		int n = x;
 
 		// Generate discs
 		int iniposxRod0 = 60; 
@@ -151,7 +151,9 @@ public class hanoi_tower_run extends JPanel
 
 	public static void main(String[] args)
 	{
-		new hanoi_tower_run();
+		String StringInputnumofdisc = JOptionPane.showInputDialog(null, "Please input NUMBER of disc (3 to 9)", "Hanoi Tower Solution Step-by-Step",3);
+		int intInputnumofdisc = Integer.parseInt(StringInputnumofdisc);
+		new hanoi_tower_run(intInputnumofdisc);
 	}
 
 }
